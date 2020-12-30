@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lviv Tesla Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="font/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<nav id="navbar">
+  <div id="navbar_content">
+    <a id="logo">Lviv Tesla Service</a>
+    <div>
+      <ul id="my-menu">
+        <li><a href="" class="navlink">Home</a></li>
+        <li><a href="" class="navlink">Cars</a></li>
+        <li><a href="" class="navlink">Service</a></li>
+        <li><a href="" class="navlink">Green Energy</a></li>
+        <li><a href="" class="navlink">Contacts</a></li>
+      </ul>
+    </div>
+    <a id="menu-btn" href="#">Меню</a>
+  </div>
+</nav>
+
+<header>
+  <div id="container-text">
+    <div class="container">
+      <div class="group">
+        <label for="">Name*: </label>
+        <input id="formName" type="text" name="name" class="form__input">
+      </div>
+      <div class="group">
+        <label for="">Enter email*: </label>
+        <input id="formEmail" type="email" name="email" class="form__input">
+      </div>
+      <div class="group">
+        <label for="">Password*: </label>
+        <input id="formPassword" type="password" class="form__input _req">
+        </div>
+      <button id="sbmt" class="registerbtn group">Send</button>
+      <br>
+      <button id="try">Try it</button>
+      <p id="demo"></p>
+    </div>
+  </div>
+</header>
+
+<script>
+      let sbmt = document.getElementById("sbmt");
+      let formName = document.getElementById("formName");
+      let formEmail = document.getElementById("formEmail");
+      let formPassword = document.getElementById("formPassword");
+        
+      const nameRegex = /^[a-z0-9]{3,16}$/;
+      const emailRegex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/i;
+      const passwordRegex = /^[a-z0-9]{3,16}$/;
+
+      sbmt.addEventListener("click", checkForm);
+      function checkForm() {
+        if (!formName.value.match(nameRegex)) { 
+          alert ("Name field empty!");
+        } else if (!formEmail.value.match(emailRegex)) {
+          alert ("Email field empty!");
+        } else if (!formPassword.value.match(passwordRegex)) {
+          alert ("Password field empty!");
+        } 
+      }
+
+
+      var x = document.getElementById("try");
+      x.addEventListener("mouseover", mouseOverFunction);
+      x.addEventListener("mouseout", mouseOutFunction);
+
+      function mouseOverFunction() {
+        document.getElementById("demo").innerHTML += "Moused over!<br>";
+      }
+
+      function mouseOutFunction() {
+          document.getElementById("demo").innerHTML += "Moused out!<br>";
+      }
+    </script>
+
+
+<script src="script.js"></script>
+<script src="createScript.js"></script>
+</body>
+</html>
